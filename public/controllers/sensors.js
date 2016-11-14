@@ -11,6 +11,7 @@
             $scope.nearbyItems = initItems();
             $scope.groups = batteryService.groups;
             $scope.appName = batteryService.appName;
+            $scope.errorMessage = null;
 
             $scope.show = $cookies['getObject']('groupSettings') || {
                     alarm: true,

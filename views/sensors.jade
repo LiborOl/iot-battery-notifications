@@ -6,13 +6,13 @@ block vars
 
 block content
     div(data-ng-controller='sensors')
-        div(data-ng-if='errorMessage')
+        div(data-ng-if='!dataLoaded && !errorMessage', class='panel panel-group')
+            h1 Loading data...
+        div(data-ng-if='!!errorMessage' ng-cloak)
             div(class='alert alert-danger')
                 strong ERROR:
                 | {{' ' + errorMessage}}
-        div(data-ng-if='!dataLoaded && !errorMessage', class='panel panel-group')
-            h1 Loading data...
-        div(data-ng-if='dataLoaded && !errorMessage', class='panel panel-group')
+        div(data-ng-if='dataLoaded && !errorMessage' class='panel panel-group' ng-cloak)
             div(style='cursor:default', class='panel panel-default')
                 div(class='panel-heading', data-toggle="collapse", data-target="#groupsFilter")
                     h4
