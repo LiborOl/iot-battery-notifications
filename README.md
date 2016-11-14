@@ -16,3 +16,5 @@ edit data/config.json file
 
 ## run
 npm run start
+
+The application runs on port defined in environmental variable PORT (3000 by default).
